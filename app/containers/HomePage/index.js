@@ -11,6 +11,8 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
+import { Container, Row, Col, Nav } from 'react-bootstrap'
+
 
 import { useInjectReducer } from 'utils/injectReducer';
 import { useInjectSaga } from 'utils/injectSaga';
@@ -32,6 +34,8 @@ import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
+
+import './styles.css'
 
 const key = 'home';
 
@@ -58,6 +62,7 @@ export function HomePage({
   };
 
   return (
+    <>
     <article>
       <Helmet>
         <title>Home Page</title>
@@ -67,37 +72,38 @@ export function HomePage({
         />
       </Helmet>
       <div>
-        <CenteredSection>
-          <H2>
-            <FormattedMessage {...messages.startProjectHeader} />
-          </H2>
-          <p>
-            <FormattedMessage {...messages.startProjectMessage} />
-          </p>
-        </CenteredSection>
-        <Section>
-          <H2>
-            <FormattedMessage {...messages.trymeHeader} />
-          </H2>
-          <Form onSubmit={onSubmitForm}>
-            <label htmlFor="username">
-              <FormattedMessage {...messages.trymeMessage} />
-              <AtPrefix>
-                <FormattedMessage {...messages.trymeAtPrefix} />
-              </AtPrefix>
-              <Input
-                id="username"
-                type="text"
-                placeholder="mxstbr"
-                value={username}
-                onChange={onChangeUsername}
-              />
-            </label>
-          </Form>
-          <ReposList {...reposListProps} />
-        </Section>
+        <Container fluid>
+          <Row>
+            <Col md={3} lg={2} className="sidebar">
+              <div className="sidebar-sticky">
+                <Nav defaultActiveKey="/home" className="flex-column py-2 nav-list">
+                  <Nav.Link href="/home" className="title active">Home</Nav.Link>
+                  <Nav.Link eventKey="link-1">Learning</Nav.Link>
+                  <Nav.Link eventKey="link-2">Courses</Nav.Link>
+                  <Nav.Link eventKey="link-3">Learning Plans</Nav.Link>
+                  <hr/>
+                  <Nav.Link eventKey="disabled" className="title" disabled>Manage</Nav.Link>
+                  <Nav.Link eventKey="link-4">Users</Nav.Link>
+                  <Nav.Link eventKey="link-5">Skills</Nav.Link>
+                  <Nav.Link eventKey="link-6">Reports</Nav.Link>
+                  <Nav.Link eventKey="link-7">Analytics</Nav.Link>
+                  <Nav.Link eventKey="link-8">Annoucements</Nav.Link>
+                  <hr/>
+                  <Nav.Link eventKey="disabled" className="title" disabled>Configure</Nav.Link>
+                  <Nav.Link eventKey="link-9">Points</Nav.Link>
+                  <Nav.Link eventKey="link-10">Reward</Nav.Link>
+                  <Nav.Link eventKey="link-11">Email templates</Nav.Link>
+                  <Nav.Link eventKey="link-12">Company Info</Nav.Link>
+                  <Nav.Link eventKey="link-13">Billing</Nav.Link>
+                </Nav>
+              </div>
+            </Col>
+            <Col md={9} lg={10} className="px-md-4 ml-sm-auto bg-content py-2">2 of 2</Col>
+          </Row>
+        </Container>
       </div>
     </article>
+    </>
   );
 }
 
