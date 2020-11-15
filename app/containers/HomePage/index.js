@@ -21,19 +21,14 @@ import {
   makeSelectLoading,
   makeSelectError,
 } from 'containers/App/selectors';
-import H2 from 'components/H2';
-import ReposList from 'components/ReposList';
-import AtPrefix from './AtPrefix';
-import CenteredSection from './CenteredSection';
-import Form from './Form';
-import Input from './Input';
-import Section from './Section';
-import messages from './messages';
+import SectionContainer from 'components/SectionContainer'
 import { loadRepos } from '../App/actions';
 import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
+
+import LineChart from './LineChart'
 
 import './styles.css'
 
@@ -45,7 +40,6 @@ export function HomePage({
   error,
   repos,
   onSubmitForm,
-  onChangeUsername,
 }) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
@@ -98,7 +92,22 @@ export function HomePage({
                 </Nav>
               </div>
             </Col>
-            <Col md={9} lg={10} className="px-md-4 ml-sm-auto bg-content py-2">2 of 2</Col>
+            <Col md={9} lg={10} className="px-md-4 ml-sm-auto bg-content py-2">
+              <Row>
+                <Col md={12}>
+                  <SectionContainer title="Your Title">
+                    <Row>
+                      <Col md={8}>
+                        <LineChart />
+                      </Col>
+                      <Col md={4}>
+                        Lorem ipsum
+                      </Col>
+                    </Row>
+                  </SectionContainer>
+                </Col>
+              </Row>
+            </Col>
           </Row>
         </Container>
       </div>
