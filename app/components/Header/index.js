@@ -1,12 +1,14 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import A from './A';
 import Img from './Img';
 import NavBar from './NavBar';
 import HeaderLink from './HeaderLink';
-import Banner from './banner.jpg';
 import messages from './messages';
+import Banner from 'assets/codemi-logo.png';
+import User from 'assets/user-icon.png';
 
 import Button from "react-bootstrap/Button";
 import { Navbar, Nav, NavDropdown, Form, FormControl} from "react-bootstrap";
@@ -23,19 +25,15 @@ function Header() {
         }
         `}
       </style>
-
       <Navbar bg="header" variant="dark">
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="flat">Search</Button>
-          </Form>
-        </Navbar>
+        <Navbar.Brand href="#home">
+          <Img src={Banner} alt="react-boilerplate - Logo" />
+        </Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse className="justify-content-end">
+          <img src={User} alt="react-boilerplate - Logo" style={{width: 50}} />
+        </Navbar.Collapse>
+      </Navbar>
     </div>
   );
 }

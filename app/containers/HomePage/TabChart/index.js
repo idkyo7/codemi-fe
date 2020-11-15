@@ -45,7 +45,7 @@ function TabChart() {
       type: "column",
       dataPointWidth: 10,
       dataPoints: [
-        { label: "Confirme",  y: apiData ? apiData.confirmed.value : 0, color: "#8eb6f9"  },
+        { label: "Confirmed",  y: apiData ? apiData.confirmed.value : 0, color: "#8eb6f9"  },
         { label: "Deaths",  y: apiData ? apiData.deaths.value : 0, color: "#8eb6f9"  },
         { label: "Recovered",  y: apiData ? apiData.recovered.value : 0, color: "#8eb6f9"  },
       ]
