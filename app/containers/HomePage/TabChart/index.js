@@ -17,15 +17,18 @@ import './styles.css';
 
 function TabChart() {
 
-  const [apiData, setApiData] = useState();
- 
-  useEffect(async () => {
-    const result = await axios(
-      'https://covid19.mathdro.id/api/',
-    );
- 
-    setApiData(result.data);
+  const [apiData, setApiData] = useState("");
+
+    
+  useEffect(() => {
+      (async () => {
+          const result = await axios.get(
+              "https://covid19.mathdro.id/api/"
+          );
+          setApiData(result.data);
+      })();
   }, []);
+ 
   const options = {
     backgroundColor: "#4185f5",
     height: 260,
@@ -42,7 +45,7 @@ function TabChart() {
       type: "column",
       dataPointWidth: 10,
       dataPoints: [
-        { label: "Confirmed",  y: apiData ? apiData.confirmed.value : 0, color: "#8eb6f9"  },
+        { label: "Confirme",  y: apiData ? apiData.confirmed.value : 0, color: "#8eb6f9"  },
         { label: "Deaths",  y: apiData ? apiData.deaths.value : 0, color: "#8eb6f9"  },
         { label: "Recovered",  y: apiData ? apiData.recovered.value : 0, color: "#8eb6f9"  },
       ]
