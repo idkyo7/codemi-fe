@@ -17,6 +17,7 @@ import './styles.css';
 
 function LineChart() {
   const options = {
+    height: 300,
     animationEnabled: true,
     title:{
     },
@@ -52,22 +53,20 @@ function LineChart() {
           <p className="time-content">Last 7 Days</p>
         </div>
         <div className="title-section">
-          <p className="main-title">Users</p>
-          <p className="main-content">58K</p>
-          <p className="small-content red">58%</p>
+          <p className="main-title">Course Completed</p>
+          <p className="main-content">5,700</p>
+          <p className="small-content red">10,2%</p>
+        </div>
+        <div className="title-section">
+          <p className="main-title">Learning Plan Completed</p>
+          <p className="main-content">1,120</p>
+          <p className="small-content red">2,4%</p>
           <p className="time-content">Last 7 Days</p>
         </div>
         <div className="title-section">
-          <p className="main-title">Users</p>
-          <p className="main-content">58K</p>
-          <p className="small-content">58%</p>
-          <p className="time-content">Last 7 Days</p>
-        </div>
-        <div className="title-section">
-          <p className="main-title">Users</p>
-          <p className="main-content">58K</p>
-          <p className="small-content">58%</p>
-          <p className="time-content">Last 7 Days</p>
+          <p className="main-title">Learning Hour</p>
+          <p className="main-content">22m 40s</p>
+          <p className="small-content">10,2%</p>
         </div>
       </div>
       <CanvasJSChart options = {options}

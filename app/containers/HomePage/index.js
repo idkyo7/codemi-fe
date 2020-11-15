@@ -29,6 +29,7 @@ import reducer from './reducer';
 import saga from './saga';
 
 import LineChart from './LineChart'
+import TabChart from './TabChart'
 
 import './styles.css'
 
@@ -101,7 +102,7 @@ export function HomePage({
                         <LineChart />
                       </Col>
                       <Col md={4}>
-                        Lorem ipsum
+                        <TabChart />
                       </Col>
                     </Row>
                   </SectionContainer>
