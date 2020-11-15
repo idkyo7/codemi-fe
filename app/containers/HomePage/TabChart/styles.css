@@ -52,3 +52,9 @@ p {
 .select-container .form-group .form-control {
     border: none;
 }
+
+.report-text {
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+}

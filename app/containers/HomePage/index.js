@@ -13,7 +13,6 @@ import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { Container, Row, Col, Nav } from 'react-bootstrap'
 
-
 import { useInjectReducer } from 'utils/injectReducer';
 import { useInjectSaga } from 'utils/injectSaga';
 import {
@@ -96,13 +95,13 @@ export function HomePage({
             <Col md={9} lg={10} className="px-md-4 ml-sm-auto bg-content py-2">
               <Row>
                 <Col md={12}>
-                  <SectionContainer title="Your Title">
+                  <SectionContainer title="Codemi Home">
                     <Row>
                       <Col md={8}>
                         <LineChart />
                       </Col>
                       <Col md={4}>
-                        <TabChart />
+                        <TabChart/>
                       </Col>
                     </Row>
                   </SectionContainer>
